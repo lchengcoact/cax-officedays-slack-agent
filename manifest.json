@@ -1,0 +1,39 @@
+{
+	"display_information": {
+		"name": "Officedays",
+		"description": "Track who's coming to the office each day of the week",
+		"background_color": "#2c2d30"
+	},
+	"features": {
+		"bot_user": {
+			"display_name": "Officedays",
+			"always_online": true
+		},
+		"slash_commands": [
+			{
+				"command": "/officedays",
+				"description": "Show office attendance for the current (or next) week",
+				"usage_hint": "[next]",
+				"should_escape": false
+			}
+		]
+	},
+	"oauth_config": {
+		"scopes": {
+			"bot": ["commands", "chat:write", "chat:write.public"]
+		}
+	},
+	"settings": {
+		"event_subscriptions": {
+			"request_url": "https://your-domain.vercel.app/api/webhooks/slack",
+			"bot_events": []
+		},
+		"interactivity": {
+			"is_enabled": true,
+			"request_url": "https://your-domain.vercel.app/api/webhooks/slack"
+		},
+		"org_deploy_enabled": false,
+		"socket_mode_enabled": false,
+		"token_rotation_enabled": false
+	}
+}
